@@ -1,0 +1,15 @@
+E:\Projects\CV\Andela\AndelaAssesemnt2\AndelaAssesemnt2\bin\Debug\net6.0\AndelaAssesemnt2.exe
+E:\Projects\CV\Andela\AndelaAssesemnt2\AndelaAssesemnt2\bin\Debug\net6.0\AndelaAssesemnt2.deps.json
+E:\Projects\CV\Andela\AndelaAssesemnt2\AndelaAssesemnt2\bin\Debug\net6.0\AndelaAssesemnt2.runtimeconfig.json
+E:\Projects\CV\Andela\AndelaAssesemnt2\AndelaAssesemnt2\bin\Debug\net6.0\AndelaAssesemnt2.dll
+E:\Projects\CV\Andela\AndelaAssesemnt2\AndelaAssesemnt2\bin\Debug\net6.0\AndelaAssesemnt2.pdb
+E:\Projects\CV\Andela\AndelaAssesemnt2\AndelaAssesemnt2\obj\Debug\net6.0\AndelaAssesemnt2.csproj.AssemblyReference.cache
+E:\Projects\CV\Andela\AndelaAssesemnt2\AndelaAssesemnt2\obj\Debug\net6.0\AndelaAssesemnt2.GeneratedMSBuildEditorConfig.editorconfig
+E:\Projects\CV\Andela\AndelaAssesemnt2\AndelaAssesemnt2\obj\Debug\net6.0\AndelaAssesemnt2.AssemblyInfoInputs.cache
+E:\Projects\CV\Andela\AndelaAssesemnt2\AndelaAssesemnt2\obj\Debug\net6.0\AndelaAssesemnt2.AssemblyInfo.cs
+E:\Projects\CV\Andela\AndelaAssesemnt2\AndelaAssesemnt2\obj\Debug\net6.0\AndelaAssesemnt2.csproj.CoreCompileInputs.cache
+E:\Projects\CV\Andela\AndelaAssesemnt2\AndelaAssesemnt2\obj\Debug\net6.0\AndelaAssesemnt2.dll
+E:\Projects\CV\Andela\AndelaAssesemnt2\AndelaAssesemnt2\obj\Debug\net6.0\refint\AndelaAssesemnt2.dll
+E:\Projects\CV\Andela\AndelaAssesemnt2\AndelaAssesemnt2\obj\Debug\net6.0\AndelaAssesemnt2.pdb
+E:\Projects\CV\Andela\AndelaAssesemnt2\AndelaAssesemnt2\obj\Debug\net6.0\AndelaAssesemnt2.genruntimeconfig.cache
+E:\Projects\CV\Andela\AndelaAssesemnt2\AndelaAssesemnt2\obj\Debug\net6.0\ref\AndelaAssesemnt2.dll

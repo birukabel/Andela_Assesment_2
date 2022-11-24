@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using static TicketsConsole.Program;
 
 
@@ -98,8 +99,7 @@ namespace TicketsConsole
 
         }
 
-        public void
-            SendCustomerNotifications(Customer customer, List<Event> lstEvents)
+        public void SendCustomerNotifications(Customer customer, List<Event> lstEvents)
         {
             //Option 1 using LINQ to SQL
             var customerEvents = from ev in lstEvents
@@ -168,14 +168,23 @@ namespace TicketsConsole
                     dicFiveClosestEvents.Add(ev, dis);
                 }
             }
-            var fiveEvents = from x in dicFiveClosestEvents
+            var fiveEvents = (from x in dicFiveClosestEvents
                              orderby x.Value
-                             select x;
+                             select x).Take(5);
+
             Console.WriteLine("Events sorted in ascending order");
             foreach (var eve in fiveEvents)
             {
                 Console.WriteLine("Nearest Event Name = {0} and Event distance = {1}", eve.Key.Name, eve.Value);
             }
+            foreach (var fv in fiveEvents)
+            {
+                fiveNearestevents.Add(fv.Key);
+            }
+            
+            return fiveNearestevents;
+            /*var s = (from fe in fiveEvents
+                                 select fe).Take(5);
             int index = 0;
             foreach (var y in fiveEvents)
             {
@@ -191,7 +200,7 @@ namespace TicketsConsole
             {
                 Console.WriteLine("Nearest Event Name = {0} and Event City = {1}", r.Name, r.City);
             }
-            return fiveNearestevents;
+            return fiveNearestevents;*/
         }
 
         public static int GetDistance(string fromCity, string toCity)
@@ -241,23 +250,23 @@ namespace TicketsConsole
                 Console.WriteLine("from to city {0} distance {1}", str, dicDistance[str]);
             }
 
-            var fiveEvents = from x in dicFiveClosestEvents
+            var fiveEvents = (from x in dicFiveClosestEvents
                              orderby x.Value
-                             select x;
+                             select x).Take(5);
             Console.WriteLine("Events sorted in ascending order");
             foreach (var eve in fiveEvents)
             {
                 Console.WriteLine("Nearest Event Name = {0} and Event distance = {1}", eve.Key.Name, eve.Value);
             }
-            int index = 0;
+            //int index = 0;
             foreach (var y in fiveEvents)
             {
-                if (index < 5)
-                {
+                //if (index < 5)
+                //{
                     fiveNearestevents.Add(y.Key);
-                    index++;
-                }
-                if (index == 5) break;
+                    //index++;
+                //}
+                //if (index == 5) break;
             }
             Console.WriteLine("Five nearest events sorted in ascending order");
             foreach (var r in fiveNearestevents)
@@ -279,15 +288,15 @@ namespace TicketsConsole
                     dicFiveClosestEvents.Add(ev, dis);
                 }
             }
-            var fiveEvents = from x in dicFiveClosestEvents
+            var fiveEvents = (from x in dicFiveClosestEvents
                              orderby x.Value
-                             select x;
+                             select x).Take(5);
 
             foreach (var eve in fiveEvents)
             {
                 Console.WriteLine("Nearest Event Name = {0} Event distance = {1}", eve.Key.Name, eve.Value);
             }
-            int index = 0;
+            //int index = 0;
 
 
             Dictionary<Event, decimal> dicEP = new();
@@ -302,18 +311,18 @@ namespace TicketsConsole
                 }
             }
 
-            var fiveChepestEvents = from x in dicEP
+            var fiveChepestEvents = (from x in dicEP
                                     orderby x.Value
-                                    select x;
+                                    select x).Take(5);
 
             foreach (var y in fiveChepestEvents)
             {
-                if (index < 5)
-                {
+                //if (index < 5)
+                //{
                     fiveNearestevents.Add(y.Key);
-                    index++;
-                }
-                if (index == 5) break;
+                    //index++;
+                //}
+                //if (index == 5) break;
             }
             foreach (var r in fiveNearestevents)
             {
@@ -363,23 +372,23 @@ namespace TicketsConsole
                     Console.WriteLine("from to city {0} distance {1}", str, dicDistance[str]);
                 }
 
-                var fiveEvents = from x in dicFiveClosestEvents
+                var fiveEvents = (from x in dicFiveClosestEvents
                                  orderby x.Value
-                                 select x;
+                                 select x).Take(5);
                 Console.WriteLine("Events sorted in ascending order");
                 foreach (var eve in fiveEvents)
                 {
                     Console.WriteLine("Nearest Event Name = {0} and Event distance = {1}", eve.Key.Name, eve.Value);
                 }
-                int index = 0;
+                //int index = 0;
                 foreach (var y in fiveEvents)
                 {
-                    if (index < 5)
-                    {
+                   // if (index < 5)
+                    //{
                         fiveNearestevents.Add(y.Key);
-                        index++;
-                    }
-                    if (index == 5) break;
+                        //index++;
+                    //}
+                    //if (index == 5) break;
                 }
                 Console.WriteLine("Five nearest events sorted in ascending order");
                 foreach (var r in fiveNearestevents)
