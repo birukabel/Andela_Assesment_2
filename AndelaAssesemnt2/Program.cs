@@ -137,23 +137,34 @@ namespace TicketsConsole
                     dicNext.Add(e.Id, daysDiff);
                 }
             }
-            int min = 0;
-            int evID = 1;
-            if (dicNext.Count > 0)
-            {
-                min = dicNext[dicNext.Keys.First()];
-            }
 
-            foreach (int ids in dicNext.Keys)
-            {
-                if (dicNext[ids] <= min)
-                {
-                    min = dicNext[ids];
-                    evID = ids;
-                }
-            }
+            var nextBiirth = (from nb in dicNext
+                             orderby nb.Value
+                             select nb).Take(1);
+
+            //int min = 0;
+            int evID = 1;
+
+            evID = nextBiirth.Select(x => x.Key).FirstOrDefault();
 
             Console.WriteLine($"{customer.Name} from {customer.City} event {lstEvents.Where(x => x.Id == evID).FirstOrDefault().Name} at {lstEvents.Where(x => x.Id == evID).FirstOrDefault().Date}");
+
+           
+            //if (dicNext.Count > 0)
+            //{
+            //    min = dicNext[dicNext.Keys.First()];
+            //}
+
+            //foreach (int ids in dicNext.Keys)
+            //{
+            //    if (dicNext[ids] <= min)
+            //    {
+            //        min = dicNext[ids];
+            //        evID = ids;
+            //    }
+            //}
+
+            //Console.WriteLine($"{customer.Name} from {customer.City} event {lstEvents.Where(x => x.Id == evID).FirstOrDefault().Name} at {lstEvents.Where(x => x.Id == evID).FirstOrDefault().Date}");
         }
 
         public static List<Event> GetFiveClosestEvents(Customer customer, List<Event> lstEvent)
